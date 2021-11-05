@@ -1,0 +1,34 @@
+{
+  "PAGE_TITLES": {
+    "HOME": "Anasayfa",
+    "GROCERY": "MARKET"
+  },
+  "GLOBAL": {
+    "TITLES": {
+      "SORT": "Sıralama",
+      "BRANDS": "Markalar",
+      "TAGS": "Etiketler",
+      "PRODUCTS": "Ürünler"
+    },
+    "FORM_ELEMENTS": {
+      "CTA": {
+        "ADD": "Ekle"
+      },
+      "PLACEHOLDERS": {
+        "BRAND": "Marka ara",
+        "TAG": "Etiket ara"
+      }
+    },
+    "PAGINATION": {
+      "NEXT": "Sonraki",
+      "PREV": "Önceki"
+    },
+    "NOTIFICATION_CODES": {
+      "SUCCESS": "Başarılı",
+      "ERROR": "Hata"
+    },
+    "CTA": {
+      "BACK_TO_HOME": "Anasayfaya dön"
+    }
+  }
+}
