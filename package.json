@@ -7,9 +7,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "env-cmd -f environments/.env.development yarn run start",
+    "dev": "env-cmd -f environments/.env.development npm run start",
     "build": "react-scripts build",
-    "build:prod": "env-cmd -f environments/.env.prod yarn run-script build",
+    "build:prod": "env-cmd -f environments/.env.prod npm run-script build",
     "test": "jest --passWithNoTests",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts,.tsx",
