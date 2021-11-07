@@ -1,3 +1,6 @@
+// Import React
+import { useSelector } from 'react-redux';
+
 // Import JSS
 import { createUseStyles } from 'react-jss';
 
@@ -6,6 +9,9 @@ import { Row } from 'antd';
 
 // Import Constants
 import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
+
+// Import Store
+import { RootState } from 'src/store/store';
 
 // Import Components
 import BasketItem from './BasketItem';
@@ -22,13 +28,17 @@ const useStyles = createUseStyles({
 });
 
 function Basket() {
+  const basketState = useSelector((state: RootState) => state?.basket.basket);
+
   // Styles const
   const classes = useStyles();
 
   return (
     <div className={classes.basket_item_container}>
-      <BasketItem />
-      <BasketItem />
+      {basketState?.map((item, index) => (
+        <BasketItem key={index} item={item} />
+      ))}
+
       <Row justify="end">
         <BasketTotal />
       </Row>

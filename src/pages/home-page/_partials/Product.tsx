@@ -1,5 +1,10 @@
+// Import React
+import { useDispatch } from 'react-redux';
+
 // Import JSS
 import { createUseStyles } from 'react-jss';
+
+// Import Constants
 import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
 
 // Import Utils
@@ -41,19 +46,35 @@ const useStyles = createUseStyles({
 });
 
 function Product(props) {
-  const { price, product } = props;
+  const { item } = props;
+
+  // Variables
+  const dispatch = useDispatch();
 
   // Styles const
   const classes = useStyles();
+
+  const handleAdd2Basket = (item) => {
+    dispatch({
+      type: 'NEW_ITEM_ADD',
+      payload: item
+    });
+  };
 
   return (
     <div className={classes.product_container}>
       <div className={classes.image_container}>
         <div />
       </div>
-      <div className={classes.price}>{getFormattedAmount(price)}</div>
-      <div className={classes.product_name}>{product}</div>
-      <Button type="primary" name="add_button" block label="GLOBAL.FORM_ELEMENTS.CTA.ADD" />
+      <div className={classes.price}>{getFormattedAmount(item?.price)}</div>
+      <div className={classes.product_name}>{item?.name}</div>
+      <Button
+        type="primary"
+        name="add_button"
+        block
+        label="GLOBAL.FORM_ELEMENTS.CTA.ADD"
+        onClick={() => handleAdd2Basket(item)}
+      />
     </div>
   );
 }

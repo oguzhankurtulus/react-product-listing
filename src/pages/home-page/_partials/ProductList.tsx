@@ -92,7 +92,7 @@ function ProductList() {
           <Row gutter={[24, 21]}>
             {productListState?.success?.data?.map((item, index) => (
               <Col sm={24} md={24} lg={12} xl={8} xxl={6} key={index}>
-                <Product key={index} price={item?.price} product={item?.name} />
+                <Product key={index} item={item} />
               </Col>
             ))}
           </Row>

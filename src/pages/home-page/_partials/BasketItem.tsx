@@ -40,7 +40,8 @@ const useStyles = createUseStyles({
   }
 });
 
-function BasketItem() {
+function BasketItem(props) {
+  const { item } = props;
   // Styles const
   const classes = useStyles();
 
@@ -50,12 +51,12 @@ function BasketItem() {
         <Col span={16}>
           <Row>
             <Col span={24}>
-              <span className={classes.product}>Example Product</span>
+              <span className={classes.product}>{item?.name}</span>
             </Col>
           </Row>
           <Row>
             <Col span={24}>
-              <span className={classes.price}>{getFormattedAmount(18.99)}</span>
+              <span className={classes.price}>{getFormattedAmount(item?.price)}</span>
             </Col>
           </Row>
         </Col>
