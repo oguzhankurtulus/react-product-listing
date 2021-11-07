@@ -23,7 +23,7 @@ function Checkbox(props: CheckboxProps) {
 
   return (
     <FormItem {...props}>
-      <CheckboxAntd {...props} onChange={() => null}>
+      <CheckboxAntd {...props}>
         {required && <span className="text-danger mr5">*</span>}
         {typeof text === 'string' ? <TranslatedText label={text} /> : text}
       </CheckboxAntd>

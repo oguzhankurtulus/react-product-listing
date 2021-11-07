@@ -1,0 +1,12 @@
+export enum CUSTOM_COLORS {
+  MAIN_BLUE = '#1ea4ce',
+  BLACK = '#000000',
+  WHITE = '#FFFFFF',
+  HEADER_BLUE = '#147594',
+  SECONDARY_TEXT = '#697488',
+  MAIN_BACKGROUND = '#e5e5e5',
+  LIGHT_BACKGROUND = '#fefefe',
+  LIGHT_BORDER = '#f3f0fe',
+  SECONDARY_BACKGROUND = '#c4c4c4',
+  BLACK_TEXT = '#191919'
+}

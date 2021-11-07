@@ -1,12 +1,11 @@
 // Import React
-import { ReactNode } from 'react';
+import { ReactNode, Fragment } from 'react';
 
 // Import Antd
 import { Button as ButtonAntd } from 'antd';
 import { ButtonProps as ButtonPropsAntd } from 'antd/lib/button';
 
 // Import Constants
-import { BUTTON_SIZES } from 'src/common/constants/sizes/buttonSizes';
 import { STATUS } from 'src/common/constants/status/status';
 import { MARGIN_SIZES } from 'src/common/constants/sizes/marginSizes';
 
@@ -17,12 +16,11 @@ import FormItem from 'src/components/form-elements/form-item/FormItem';
 // TODO
 // import 'src/assets/styles/buttons.scss';
 
-export interface ButtonProps extends Omit<ButtonPropsAntd, 'size'> {
+export interface ButtonProps extends ButtonPropsAntd {
   status?: STATUS | undefined;
   label?: string | undefined;
   icon?: ReactNode;
   className?: string | undefined;
-  sizes?: BUTTON_SIZES | undefined;
   block?: boolean;
   marginright?: MARGIN_SIZES;
   marginleft?: MARGIN_SIZES;
@@ -40,7 +38,6 @@ function Button(props: ButtonProps) {
     status,
     icon,
     className = '',
-    sizes,
     block,
     marginright,
     marginleft,
@@ -59,7 +56,7 @@ function Button(props: ButtonProps) {
         id={name}
         className={
           status
-            ? `btn-${status} ${className} ${sizes} 
+            ? `btn-${status} ${className}  
           margin_right_${marginright} margin_left_${marginleft} margin_top_${margintop} margin_bottom_${marginbottom}`
             : `${className} 
           margin_right_${marginright} margin_left_${marginleft} margin_top_${margintop} margin_bottom_${marginbottom}`
@@ -71,12 +68,11 @@ function Button(props: ButtonProps) {
     </div>
   );
 
-  return <>{isform ? <FormItem name={name}>{buttonTemplate}</FormItem> : buttonTemplate}</>;
+  return <Fragment>{isform ? <FormItem name={name}>{buttonTemplate}</FormItem> : buttonTemplate}</Fragment>;
 }
 
 Button.defaultProps = {
-  block: false,
-  sizes: BUTTON_SIZES.MD
+  block: false
 };
 
 export default Button;

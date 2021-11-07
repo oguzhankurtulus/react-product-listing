@@ -8,7 +8,7 @@ type MergedProps = CheckboxGroupPropsAntd & Omit<FormItemProps, 'children'>;
 // Import Child Components
 const CheckboxGroupAntd = CheckboxAntd.Group;
 
-function CheckboxGoup(props: MergedProps) {
+function CheckboxGroup(props: MergedProps) {
   return (
     <FormItem {...props}>
       <CheckboxGroupAntd {...props} />
@@ -16,4 +16,4 @@ function CheckboxGoup(props: MergedProps) {
   );
 }
 
-export default CheckboxGoup;
+export default CheckboxGroup;
