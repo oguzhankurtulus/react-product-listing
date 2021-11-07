@@ -40,7 +40,9 @@ const useStyles = createUseStyles({
   }
 });
 
-function Product() {
+function Product(props) {
+  const { price, product } = props;
+
   // Styles const
   const classes = useStyles();
 
@@ -49,8 +51,8 @@ function Product() {
       <div className={classes.image_container}>
         <div />
       </div>
-      <div className={classes.price}>{getFormattedAmount(14.99)}</div>
-      <div className={classes.product_name}>Gorgeous office Mug</div>
+      <div className={classes.price}>{getFormattedAmount(price)}</div>
+      <div className={classes.product_name}>{product}</div>
       <Button type="primary" name="add_button" block label="GLOBAL.FORM_ELEMENTS.CTA.ADD" />
     </div>
   );

@@ -1,11 +1,9 @@
 import { baseApi } from './baseApi';
-import { SERVICES } from '../constants/serviceConstants';
 import { STORE_CONFIG } from '../storeConfig';
 import { errorDecoderPushNotification, successDecoderPushNotification } from '../../common/utils/errorDecoder';
 
 export const api = (
   method: 'get' | 'post' | 'put' | 'delete',
-  service: SERVICES,
   url: string,
   params: Record<string, unknown> | string | FormData | undefined,
   requestName: string,
@@ -18,7 +16,7 @@ export const api = (
 
   baseApi({
     method,
-    url: `${service}${url}`,
+    url: `${url}`,
     data: method === 'get' ? undefined : params,
     params: method === 'get' ? params : undefined
   })
