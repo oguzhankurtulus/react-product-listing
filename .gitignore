@@ -59,7 +59,4 @@ app.yaml
 .eslintcache
 /.eslintcache
 *.eslintcache
-yarn.lock
-package-lock.json
-/package-lock.json
 .husky
