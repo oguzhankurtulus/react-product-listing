@@ -43,7 +43,6 @@ function ProductList() {
   const dispatch = useDispatch();
   const productListState = useSelector((state: RootState) => state?.globalReducer?.getItems);
 
-  console.log(productListState);
   // Styles const
   const classes = useStyles();
 
@@ -78,7 +77,9 @@ function ProductList() {
 
   useEffect(() => {
     const variables = {
-      page: 1
+      page: 1,
+      sort: 'price',
+      order: 'asc'
     };
 
     dispatch(getItems(variables));

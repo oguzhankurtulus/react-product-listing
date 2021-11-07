@@ -14,6 +14,7 @@ type MergedProps = Omit<CheckboxGroupPropsAntd, 'options'> & Omit<FormItemProps,
 export interface CheckBoxGroupProps extends MergedProps {
   options: string[];
   direction?: 'vertical' | 'horizontal';
+  handleChange?;
 }
 
 const useStyles = createUseStyles({
@@ -30,7 +31,7 @@ const useStyles = createUseStyles({
 const CheckboxGroupAntd = CheckboxAntd.Group;
 
 function CheckAll(props: CheckBoxGroupProps) {
-  const { options, direction } = props;
+  const { options, direction, handleChange } = props;
 
   const classes = useStyles();
 
@@ -42,10 +43,12 @@ function CheckAll(props: CheckBoxGroupProps) {
     setCheckedList(list);
     setIndeterminate(!!list.length && list.length < options?.length);
     setCheckAll(list.length === options?.length);
+    handleChange(list);
   };
 
   const onCheckAllChange = (e) => {
     setCheckedList(e.target.checked ? options : []);
+    handleChange(e.target.checked ? options : []);
     setIndeterminate(false);
     setCheckAll(e.target.checked);
   };
