@@ -28,19 +28,21 @@ const useStyles = createUseStyles({
 });
 
 function Basket() {
-  const basketState = useSelector((state: RootState) => state?.basket.basket);
+  const basketState = useSelector((state: RootState) => state?.basket);
+
+  console.log(basketState);
 
   // Styles const
   const classes = useStyles();
 
   return (
     <div className={classes.basket_item_container}>
-      {basketState?.map((item, index) => (
+      {basketState?.basket?.map((item, index) => (
         <BasketItem key={index} item={item} />
       ))}
 
       <Row justify="end">
-        <BasketTotal />
+        <BasketTotal total={basketState?.total} />
       </Row>
     </div>
   );

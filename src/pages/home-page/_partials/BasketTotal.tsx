@@ -17,11 +17,12 @@ const useStyles = createUseStyles({
   }
 });
 
-function BasketTotal() {
+function BasketTotal(props) {
+  const { total } = props;
   // Styles const
   const classes = useStyles();
 
-  return <div className={classes.basket_total}>{getFormattedAmount(39.99)}</div>;
+  return <div className={classes.basket_total}>{getFormattedAmount(total)}</div>;
 }
 
 export default BasketTotal;

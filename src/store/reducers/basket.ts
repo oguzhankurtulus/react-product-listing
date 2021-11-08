@@ -1,5 +1,6 @@
 const initialState = {
-  basket: []
+  basket: [],
+  total: 0
 };
 
 export default function basket(state: any = initialState, action) {
@@ -7,7 +8,8 @@ export default function basket(state: any = initialState, action) {
     case `NEW_ITEM_ADD`:
       return {
         ...state,
-        basket: [...state.basket, action.payload]
+        basket: [...state.basket, action.payload],
+        total: (state.total + action.payload.price)
       };
     case `AMOUNT_UPDATE`:
       return {

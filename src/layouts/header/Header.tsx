@@ -1,3 +1,6 @@
+// Import React
+import { useSelector } from 'react-redux';
+
 // Import JSS
 import { createUseStyles } from 'react-jss';
 
@@ -7,6 +10,9 @@ import Basket from '../../assets/img/basket.svg';
 
 // Import Utils
 import { getFormattedAmount } from 'src/common/utils/amountUtil';
+
+// Import Store
+import { RootState } from 'src/store/store';
 
 // Import Constants
 import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
@@ -38,6 +44,8 @@ const useStyles = createUseStyles({
 });
 
 function Header() {
+  const basketState = useSelector((state: RootState) => state?.basket);
+
   // Styles const
   const classes = useStyles();
 
@@ -50,7 +58,7 @@ function Header() {
         <span>
           <img src={Basket} alt="Basket" />
         </span>
-        {getFormattedAmount(39.37)}
+        {getFormattedAmount(basketState?.total)}
       </div>
     </div>
   );
