@@ -7,9 +7,6 @@ import { LOADING_TYPES } from 'src/common/constants/loading/loadingTypes';
 // Import Components
 import Spin from 'src/components/spin/Spin';
 
-// TODO
-// import 'src/assets/styles/_loading.scss';
-
 interface LoadingProps {
   loading: boolean;
   loadingType?: LOADING_TYPES;

@@ -13,9 +13,6 @@ import { MARGIN_SIZES } from 'src/common/constants/sizes/marginSizes';
 import TranslatedText from 'src/components/translated-text/TranslatedText';
 import FormItem from 'src/components/form-elements/form-item/FormItem';
 
-// TODO
-// import 'src/assets/styles/buttons.scss';
-
 export interface ButtonProps extends ButtonPropsAntd {
   status?: STATUS | undefined;
   label?: string | undefined;

@@ -8,9 +8,6 @@ import TranslatedText from 'src/components/translated-text/TranslatedText';
 // Import Utils
 import { translate } from 'src/common/utils/translateUtil';
 
-// TODO
-// import 'src/assets/styles/_form.scss';
-
 export interface FormItemProps extends FormItemPropsAntd {
   name: string | number | (string | number)[] | undefined;
   label?: string | null;

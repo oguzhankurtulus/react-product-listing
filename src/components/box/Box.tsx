@@ -7,9 +7,6 @@ import { createUseStyles, useTheme } from 'react-jss';
 // Import Constants
 import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
 
-// TODO
-// import 'src/assets/styles/_box.scss';
-
 //Import Components
 import BoxTitle from 'src/components/title/box-title/BoxTitle';
 

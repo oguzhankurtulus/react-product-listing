@@ -10,9 +10,6 @@ import { STATUS } from 'src/common/constants/status/status';
 import { TEXT_WEIGHT } from 'src/common/constants/text/textWeight';
 import { FONT_SIZES } from 'src/common/constants/sizes/fontSizes';
 
-// TODO
-// import 'src/assets/styles/text.scss';
-
 // Interface
 export interface TranslatedTextProps {
   label?: string;
