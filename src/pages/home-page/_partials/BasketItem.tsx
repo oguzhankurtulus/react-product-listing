@@ -1,3 +1,7 @@
+// Import React
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 // Import JSS
 import { createUseStyles } from 'react-jss';
 
@@ -41,9 +45,33 @@ const useStyles = createUseStyles({
 });
 
 function BasketItem(props) {
-  const { item } = props;
+  const { item, index } = props;
+
+  // Variables
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
   // Styles const
   const classes = useStyles();
+
+  // Functions
+  const handleItemQuantity = (item, value) => {
+    if (value === 'minus') {
+      const myQuantity = quantity - 1;
+      setQuantity((prevState) => prevState - 1);
+      dispatch({
+        type: 'AMOUNT_UPDATE',
+        payload: { price: item?.price, type: 'minus', quantity: myQuantity, index }
+      });
+    } else {
+      const myQuantity = quantity + 1;
+      setQuantity((prevState) => prevState + 1);
+      dispatch({
+        type: 'AMOUNT_UPDATE',
+        payload: { price: item?.price, type: 'plus', quantity: myQuantity, index }
+      });
+    }
+  };
 
   return (
     <div>
@@ -68,16 +96,18 @@ function BasketItem(props) {
               type="ghost"
               icon={<Icon color={CUSTOM_COLORS.MAIN_BLUE} size="xs" icon={ICON_LIST.MINUS} />}
               className={classes.buttons}
+              onClick={() => handleItemQuantity(item, 'minus')}
             />
 
-            <div className={classes.amount}>1</div>
+            <div className={classes.amount}>{quantity}</div>
 
             <Button
               size="small"
-              name="minus"
+              name="plus"
               type="ghost"
               icon={<Icon color={CUSTOM_COLORS.MAIN_BLUE} size="xs" icon={ICON_LIST.PLUS} />}
               className={classes.buttons}
+              onClick={() => handleItemQuantity(item, 'plus')}
             />
           </Row>
         </Col>

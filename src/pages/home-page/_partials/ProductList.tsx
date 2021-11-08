@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createUseStyles } from 'react-jss';
 
 // Import Antd
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
 
 // Import Store
 import { RootState } from '../../../store/store';
@@ -89,13 +89,17 @@ function ProductList() {
     <Row>
       <Col span={24}>
         <Box title="GLOBAL.TITLES.PRODUCTS" titleSize="20px" titleWeight={400}>
-          <Row gutter={[24, 21]}>
-            {productListState?.success?.data?.map((item, index) => (
-              <Col sm={24} md={24} lg={12} xl={8} xxl={6} key={index}>
-                <Product key={index} item={item} />
-              </Col>
-            ))}
-          </Row>
+          {productListState?.isLoading ? (
+            <Spin />
+          ) : (
+            <Row gutter={[24, 21]}>
+              {productListState?.success?.data?.map((item, index) => (
+                <Col sm={24} md={24} lg={12} xl={8} xxl={6} key={index}>
+                  <Product key={index} item={item} />
+                </Col>
+              ))}
+            </Row>
+          )}
         </Box>
       </Col>
       {productListState?.success && (

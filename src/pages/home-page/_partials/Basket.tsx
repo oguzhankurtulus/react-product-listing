@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { createUseStyles } from 'react-jss';
 
 // Import Antd
-import { Row } from 'antd';
+import { Row, Empty } from 'antd';
 
 // Import Constants
 import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
@@ -30,15 +30,14 @@ const useStyles = createUseStyles({
 function Basket() {
   const basketState = useSelector((state: RootState) => state?.basket);
 
-  console.log(basketState);
-
   // Styles const
   const classes = useStyles();
 
   return (
     <div className={classes.basket_item_container}>
+      {basketState?.basket.length < 1 && <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No item" />}
       {basketState?.basket?.map((item, index) => (
-        <BasketItem key={index} item={item} />
+        <BasketItem key={index} item={item} index={index} />
       ))}
 
       <Row justify="end">

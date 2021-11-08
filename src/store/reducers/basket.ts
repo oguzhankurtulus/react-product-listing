@@ -9,12 +9,16 @@ export default function basket(state: any = initialState, action) {
       return {
         ...state,
         basket: [...state.basket, action.payload],
-        total: (state.total + action.payload.price)
+        total: state.total + action.payload.price
       };
     case `AMOUNT_UPDATE`:
+      if (action.payload.quantity < 1) {
+        state.basket.splice(action?.payload?.index, 1);
+      }
+
       return {
         ...state,
-        basket: action.payload
+        total: action.payload.type === 'minus' ? state.total - action.payload.price : state.total + action.payload.price
       };
     default:
       return state;
