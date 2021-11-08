@@ -35,6 +35,9 @@ const useStyles = createUseStyles({
     '& svg': {
       marginLeft: '5px'
     }
+  },
+  pagination: {
+    marginBottom: '20px'
   }
 });
 
@@ -94,7 +97,7 @@ function ProductList() {
           ) : (
             <Row gutter={[24, 21]}>
               {productListState?.success?.data?.map((item, index) => (
-                <Col sm={24} md={24} lg={12} xl={8} xxl={6} key={index}>
+                <Col sm={12} md={24} lg={12} xl={12} xxl={6} key={index}>
                   <Product key={index} item={item} />
                 </Col>
               ))}
@@ -104,7 +107,7 @@ function ProductList() {
       </Col>
       {productListState?.success && (
         <Col span={24}>
-          <Row justify="center">
+          <Row justify="center" className={classes.pagination}>
             <Pagination
               total={productListState?.success?.headers?.['x-total-count']}
               defaultPageSize={16}

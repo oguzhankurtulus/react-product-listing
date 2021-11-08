@@ -45,17 +45,17 @@ function HomePage() {
     <DefaultLayout>
       <Row gutter={16}>
         {/* FILTER */}
-        <Col span={6}>
+        <Col sm={{ span: 24, order: 1 }} md={{ span: 12, order: 2 }} lg={{ span: 7, order: 1 }} xl={8} xxl={6}>
           <HomePageFilter />
         </Col>
 
         {/* PRODUCTS */}
-        <Col span={12}>
+        <Col sm={{ span: 24, order: 3 }} md={{ span: 12, order: 3 }} lg={{ span: 10, order: 2 }} xl={8} xxl={12}>
           <ProductList />
         </Col>
 
         {/* BASKET */}
-        <Col span={6}>
+        <Col sm={{ span: 24, order: 2 }} md={{ span: 24, order: 1 }} lg={{ span: 7, order: 3 }} xl={8} xxl={6}>
           <Basket />
         </Col>
 

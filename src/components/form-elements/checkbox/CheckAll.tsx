@@ -9,6 +9,9 @@ import { Checkbox as CheckboxAntd } from 'antd';
 import FormItem, { FormItemProps } from 'src/components/form-elements/form-item/FormItem';
 import { CheckboxGroupProps as CheckboxGroupPropsAntd } from 'antd/lib/checkbox';
 
+// Import Utils
+import { translate } from 'src/common/utils/translateUtil';
+
 type MergedProps = Omit<CheckboxGroupPropsAntd, 'options'> & Omit<FormItemProps, 'children'>;
 
 export interface CheckBoxGroupProps extends MergedProps {
@@ -56,7 +59,7 @@ function CheckAll(props: CheckBoxGroupProps) {
   return (
     <FormItem {...props}>
       <CheckboxAntd indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
-        All
+        {translate('GLOBAL.OPTIONS.ALL')}
       </CheckboxAntd>
       <CheckboxGroupAntd
         className={direction && classes[`check_group_${direction}`]}

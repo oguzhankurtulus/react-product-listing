@@ -6,16 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'antd';
 
 // Import Store
+import { RootState } from 'src/store/store';
 import { getItems } from 'src/store/actions/items/getItem';
 import { getManufacturer } from 'src/store/actions/items/getManufacturer';
 import { getTags } from 'src/store/actions/items/getTags';
+
+// Import Utils
+import { translate } from 'src/common/utils/translateUtil';
 
 // Import Components
 import Box from '../../../components/box/Box';
 import RadioGroup from 'src/components/form-elements/radio/RadioGroup';
 import FormApp from 'src/components/form-elements/form/FormApp';
 import CheckAll from '../../../components/form-elements/checkbox/CheckAll';
-import { RootState } from 'src/store/store';
 
 function HomePageFilter() {
   // Variables
@@ -28,10 +31,10 @@ function HomePageFilter() {
   const [tagsArray, setTagsArray] = useState([]);
 
   const radioOptions = [
-    { label: 'Price low to high', value: '1' },
-    { label: 'Price high to low', value: '2' },
-    { label: 'New to old', value: '3' },
-    { label: 'Old to new', value: '4' }
+    { label: translate('GLOBAL.OPTIONS.PRICE_LOW_HIGH'), value: '1' },
+    { label: translate('GLOBAL.OPTIONS.PRICE_HIGH_LOW'), value: '2' },
+    { label: translate('GLOBAL.OPTIONS.NEW_OLD'), value: '3' },
+    { label: translate('GLOBAL.OPTIONS.OLD_NEW'), value: '4' }
   ];
 
   const handleSort = (e) => {

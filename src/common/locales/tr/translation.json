@@ -38,6 +38,13 @@
     },
     "CTA": {
       "BACK_TO_HOME": "Anasayfaya dön"
+    },
+    "OPTIONS": {
+      "PRICE_LOW_HIGH": "Artan fiyat",
+      "PRICE_HIGH_LOW": "Azalan fiyat",
+      "NEW_OLD": "Yeniden eskiye",
+      "OLD_NEW": "Eskiden yenine",
+      "ALL": "Tümü"
     }
   }
 }

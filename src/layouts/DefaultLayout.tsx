@@ -19,7 +19,8 @@ export interface DefaultLayoutProps {
 const useStyles = createUseStyles({
   default_layout: {
     backgroundColor: CUSTOM_COLORS.MAIN_BACKGROUND,
-    minHeight: '100vh'
+    minHeight: '100vh',
+    paddingBottom: '40px'
   },
   component_container: {
     padding: '38px 120px 0'

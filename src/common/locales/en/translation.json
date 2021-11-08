@@ -9,7 +9,7 @@
   },
   "GLOBAL": {
     "EMPTY": {
-      "DESCRIPTION":{
+      "DESCRIPTION": {
         "NO_ITEM": "No item"
       }
     },
@@ -38,6 +38,13 @@
     },
     "CTA": {
       "BACK_TO_HOME": "Back to homepage"
+    },
+    "OPTIONS": {
+      "PRICE_LOW_HIGH": "Price low to high",
+      "PRICE_HIGH_LOW": "Price high to low",
+      "NEW_OLD": "New to old",
+      "OLD_NEW": "Old to new",
+      "ALL": "All"
     }
   }
 }
