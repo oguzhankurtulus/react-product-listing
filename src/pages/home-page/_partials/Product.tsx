@@ -1,5 +1,6 @@
 // Import React
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // Import JSS
 import { createUseStyles } from 'react-jss';
@@ -9,6 +10,9 @@ import { CUSTOM_COLORS } from 'src/common/constants/colors/customColors';
 
 // Import Utils
 import { getFormattedAmount } from '../../../common/utils/amountUtil';
+
+// Import Store
+import { RootState } from 'src/store/store';
 
 // Import Components
 import Button from 'src/components/cta/button/Button';
@@ -50,6 +54,8 @@ function Product(props) {
 
   // Variables
   const dispatch = useDispatch();
+  const basketState = useSelector((state: RootState) => state?.basket);
+  const [itemInc, setItemInc] = useState(false);
 
   // Styles const
   const classes = useStyles();
@@ -60,6 +66,16 @@ function Product(props) {
       payload: item
     });
   };
+
+  useEffect(() => {
+    const isIncluded = basketState?.basket?.filter((x) => x?.name === item?.name)?.length > 0;
+
+    if (isIncluded) {
+      setItemInc(true);
+    } else {
+      setItemInc(false);
+    }
+  }, [basketState]);
 
   return (
     <div className={classes.product_container}>
@@ -74,6 +90,7 @@ function Product(props) {
         block
         label="GLOBAL.FORM_ELEMENTS.CTA.ADD"
         onClick={() => handleAdd2Basket(item)}
+        disabled={itemInc}
       />
     </div>
   );
