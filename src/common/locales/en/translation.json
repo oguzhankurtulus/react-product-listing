@@ -1,9 +1,18 @@
 {
+  "LANGUAGE": {
+    "EN": "English",
+    "TR": "Turkish"
+  },
   "PAGE_TITLES": {
     "HOME": "Home",
     "GROCERY": "GROCERY"
   },
   "GLOBAL": {
+    "EMPTY": {
+      "DESCRIPTION":{
+        "NO_ITEM": "No item"
+      }
+    },
     "TITLES": {
       "SORT": "Sorting",
       "BRANDS": "Brands",

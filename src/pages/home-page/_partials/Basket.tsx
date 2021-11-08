@@ -16,6 +16,7 @@ import { RootState } from 'src/store/store';
 // Import Components
 import BasketItem from './BasketItem';
 import BasketTotal from './BasketTotal';
+import { translate } from 'src/common/utils/translateUtil';
 
 // Styles
 const useStyles = createUseStyles({
@@ -35,7 +36,9 @@ function Basket() {
 
   return (
     <div className={classes.basket_item_container}>
-      {basketState?.basket.length < 1 && <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No item" />}
+      {basketState?.basket.length < 1 && (
+        <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={translate('GLOBAL.EMPTY.DESCRIPTION.NO_ITEM')} />
+      )}
       {basketState?.basket?.map((item, index) => (
         <BasketItem key={index} item={item} index={index} />
       ))}

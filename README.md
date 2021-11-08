@@ -3,6 +3,8 @@
 - In this application, you can discover how to manage environment variables, ant design components with customization process, to implement eslint, prettier and husky. 
 
 - It is written with TypeScript to keep the codebase typesafe. It helps developers to write more consistent and safer code.
+
+- This application can run with https://github.com/oguzhankurtulus/product-list-rest application.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

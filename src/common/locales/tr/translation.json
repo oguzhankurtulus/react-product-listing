@@ -1,9 +1,18 @@
 {
+  "LANGUAGE": {
+    "EN": "İngilizce",
+    "TR": "Türkçe"
+  },
   "PAGE_TITLES": {
     "HOME": "Anasayfa",
     "GROCERY": "MARKET"
   },
   "GLOBAL": {
+    "EMPTY": {
+      "DESCRIPTION": {
+        "NO_ITEM": "Ürün yok"
+      }
+    },
     "TITLES": {
       "SORT": "Sıralama",
       "BRANDS": "Markalar",
