@@ -17,6 +17,7 @@ export interface BoxProps {
   titleSize?: string;
   titleWeight?: number;
   titleColor?: string;
+  style?;
 }
 
 interface CustomTheme {
@@ -42,7 +43,7 @@ const useStyles = createUseStyles<RuleNames, BoxProps, CustomTheme>({
 
 function Box(props: BoxProps) {
   // Desctruct Props
-  const { title, children } = props;
+  const { title, children, style } = props;
 
   // Styles const
   const theme = useTheme<CustomTheme>();
@@ -52,7 +53,9 @@ function Box(props: BoxProps) {
     <Fragment>
       {title && <div className={classes.box_header}>{title && <BoxTitle title={title} />}</div>}
       <div>
-        <div className={classes.box_container}>{children}</div>
+        <div style={style} className={classes.box_container}>
+          {children}
+        </div>
       </div>
     </Fragment>
   );

@@ -90,7 +90,7 @@ function HomePageFilter() {
         </Row>
         <Row>
           <Col span={24}>
-            <Box title="GLOBAL.TITLES.BRANDS">
+            <Box title="GLOBAL.TITLES.BRANDS" style={{ height: '300px', overflow: 'auto' }}>
               <CheckAll
                 options={brandState?.success?.data}
                 name="brands"
@@ -101,7 +101,7 @@ function HomePageFilter() {
         </Row>
         <Row>
           <Col span={24}>
-            <Box title="GLOBAL.TITLES.TAGS">
+            <Box title="GLOBAL.TITLES.TAGS" style={{ height: '300px', overflow: 'auto' }}>
               <CheckAll
                 options={tagState?.success?.data}
                 name="tags"
